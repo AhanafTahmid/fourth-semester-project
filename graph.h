@@ -89,6 +89,8 @@ void displaystations() {
     }
 
 
+    outtextxy(280, 400, "Press 1 to exit the window");
+
     // settextstyle(6, 0, 4);
     // new Field(0, 0, 800, 70, GREEN,BLACK,"About Us");
     // //settextstyle(8, 0, 1);
@@ -163,6 +165,8 @@ void drawMetroMap() {
         strcpy(c_station, int2s[i].c_str());
         outtextxy(coordinates[i].first - 30, coordinates[i].second - 30, c_station);
     }
+
+    outtextxy(230, 400, "Press 2 to exit the window");
 }
 
 
@@ -294,7 +298,6 @@ void choice3()
             }
             else if(back.cursor()) {
                 closegraph();
-                
             }
 
         }
@@ -319,12 +322,14 @@ void graph_function() {
 
         //new Field(16, 0, 200, 40, BLUE, WHITE, "WELCOME TO THE IIUC MAP");
         outtextxy(275, 20, "****WELCOME TO THE IIUC MAP*****");
-        outtextxy(230, 400, "ENTER YOUR CHOICE FROM THE ABOVE LIST (1 to 3): ");
+        outtextxy(280, 400, "Press 4 to Exit the program");
         //settextstyle(8, 0, 1);
-        Button actions(170, 90, 675, 140, MAGENTA, "~~LIST OF ACTIONS~~");
+        Button actions(170, 90, 675, 140, MAGENTA, "~~LIST OF ACTIONS(Press 1,2 or 3)~~");
         Button oneee(170, 160, 675, 210, MAGENTA, "1. LIST ALL THE Destinations IN THE MAP");
         Button twooo(170, 230, 675, 280, MAGENTA, "2. SHOW THE IIUC MAP");
         Button threee(170, 300, 675, 350, MAGENTA, "3. GET SHORTEST TIME FROM A 'SOURCE' STATION TO 'DESTINATION' ");
+        //Button back(15, 525, 130, 565, MAGENTA, "Press 4 to Exit");
+        //outtextxy(230, 700, "Press 4 to Exit");
 
         //new Field(125, 370, 375, 430, BLUE, WHITE, "ENTER YOUR CHOICE FROM THE ABOVE LIST (1 to 3): ");
         //new Field(16, 0, 200, 40, BLUE, WHITE, "WELCOME TO THE IIUC MAP");
@@ -371,6 +376,9 @@ void graph_function() {
             // cleardevice();
             // string message = "Shortest distance between source and destination is " + to_string(p) + " Minutes by Walking";
             // printMessage(message.c_str());
+        }
+        else if(choice=='4') {
+            closegraph();
         }
         getch();
     }
