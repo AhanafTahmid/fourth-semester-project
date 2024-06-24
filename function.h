@@ -554,7 +554,7 @@ void menu()
 
     // sescond row buttons
     Button leader(125, 230, 395, 290, MAGENTA, "LeaderBoard");
-    Button graph(405, 230, 675, 290, BLUE, "Graph");
+    Button graph(405, 230, 675, 290, BLUE, "IIUC MAP");
     Button aboutMe(125, 300, 675, 360, MAGENTA, "About Us");
     //Button ext(425, 300, 675, 360, BLUE, "Exit");
 
@@ -1010,5 +1010,4 @@ void game4_start()
     //closegraph();
 //return 0;
 }
-
 
