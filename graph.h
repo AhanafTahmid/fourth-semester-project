@@ -22,7 +22,7 @@ void addEdge(string a, string b, int dis) {
     adj[y].pb({x, dis});
 }
 
-void Create_Metro_map() {
+void Create_IIUC_map() {
     //keys.pb("Bus Station");
     keys.pb("Main Gate");
     keys.pb("Library");
@@ -127,7 +127,7 @@ void displaystations2() {
     // new Field(15, 290, 785, 320, CYAN,WHITE ,"Member 2: Irtisum");
 }
 
-void drawMetroMap() {
+void drawIIUCMap() {
     cleardevice();
     setcolor(WHITE);
 
@@ -306,7 +306,7 @@ void choice3()
 }
 
 void graph_function() {
-    Create_Metro_map();
+    Create_IIUC_map();
     initwindow(900, 600, "IIUC MAP");
     setbkcolor(CYAN);
     setcolor(WHITE);
@@ -349,7 +349,7 @@ void graph_function() {
         if (choice == '1') {
             displaystations();
         } else if (choice == '2') {
-            drawMetroMap();
+            drawIIUCMap();
         } else if (choice == '3') {
             choice3();
             // cout<<"Enter the serial no. of Source and Destination"<<endl;
