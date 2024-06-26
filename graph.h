@@ -263,7 +263,7 @@ void choice3() {
 
 
 void visualizeShortestPath(int src, int dest) {
-    // Initialize graphics window
+    // Initialize new window
     initwindow(900, 600, "Shortest Path Visualization");
 
     // Draw IIUC map initially
@@ -325,11 +325,10 @@ void visualizeShortestPath(int src, int dest) {
             int u = path[i];
             int v = path[i + 1];
             line(coordinates[u].first, coordinates[u].second, coordinates[v].first, coordinates[v].second);
-            delay(1500); // Adjust delay as needed for visualization speed
+            delay(1500); // delay for visualization speed
         }
     }
 
-    // Wait for user input before closing the graphics window
     outtextxy(230, 570, "Press any key to continue...");
     getch();
     closegraph();
