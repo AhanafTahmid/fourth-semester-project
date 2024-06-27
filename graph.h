@@ -4,23 +4,6 @@
 //#include "function.h"
 
 using namespace std;
-// Global variables for visualization
-int startx = 0, starty = 0, endx = 0, endy = 0;
-int gap_lines = 20;
-int num_columns = 38;
-int num_rows = 38;
-vector<int> adja[38 * 38];
-set<int> record_obstacles;
-
-void nodes_to_map_points(int node, int color, int delay_time);
-int map_points_to_nodes(int x, int y);
-void add_obstacles(int start, int end);
-void path_color(vector<int> path);
-bool dijkstra(int start, int ends, int num_of_nodes);
-void make_graph(int screen_width, int screen_height, int gap_lines);
-void make_adjacency_list(int num_of_rows, int num_of_columns);
-
-
 
 vector<pair<int,int>> adj[100];
 #define pb push_back
@@ -317,15 +300,19 @@ void visualizeShortestPath(int src, int dest) {
     reverse(path.begin(), path.end());
 
     if (path.size() == 1 && path[0] != src) {
-        outtextxy(230, 570, "No path found.");
+        cout<< "No path found." <<endl;
+        //outtextxy(230, 570, "No path found.");
     } else {
         // Visualize the path on the map
         setcolor(YELLOW);
         for (int i = 0; i < path.size() - 1; ++i) {
             int u = path[i];
             int v = path[i + 1];
-            line(coordinates[u].first, coordinates[u].second, coordinates[v].first, coordinates[v].second);
-            delay(1500); // delay for visualization speed
+            for (int j = -2; j <= 2; ++j) {
+                    line(coordinates[u].first + j, coordinates[u].second + j, coordinates[v].first + j, coordinates[v].second + j);
+            }
+            //line(coordinates[u].first, coordinates[u].second, coordinates[v].first, coordinates[v].second);
+            delay(2000); // delay for visualization speed
         }
     }
 
@@ -333,7 +320,6 @@ void visualizeShortestPath(int src, int dest) {
     getch();
     closegraph();
 }
-
 
 
 void choice4() {
@@ -365,14 +351,9 @@ void choice4() {
             else if(back.cursor()) {
                 closegraph();
             }
-
-
-            
         }
     }
 }
-
-
 
 
 
